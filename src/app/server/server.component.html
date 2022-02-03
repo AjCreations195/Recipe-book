@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="col-xs-12">
+    <label for="">serverName</label>
+    <input type="text" class="form-control" (input)="onUpdateServer($event)" name="" id="">
+   <p>{{serverName}}</p>
+
+   <hr>
+    <button [disabled]="!allownewServer" (click)="onCreateServer()"
+     class="btn btn-primary">Add Server</button>
+<app-servers></app-servers>
+<p>{{ serverCreation}}</p>
+<hr>
+<app-servers *ngFor="let server of servers"></app-servers>
+<hr>
+<label for="">serverName</label>
+<input type="text" [(ngModel)]="serverName">
+<p>{{serverName}}</p>
+
+
+<hr>
+<label for="">userName</label>
+<input type="text" class="form-control"  [(ngModel)]="userName">
+
+<p>{{userName}}</p>
+<button class="btn btn-dark" (click)="userName=''" [disabled]="userName === '' ">reset</button>
+
+<hr>
+<p *ngIf="status; else noServer">Server was created at the port {{serverPort}}</p>
+<ng-template #noServer><p>No server was created</p></ng-template>
+<input type="text "  [(ngModel)]="serverPort">
+<button  (click)="status=!status" >click</button>
+<hr>
+<p [ngStyle]="{backgroundColor:getColor()}" [ngClass]="{online:serverStatus === 'online'}"> {{'server'}}  with Id {{serverId}} {{getServerStatus()}} </p>
+
+<hr>
+<button (click)="ChangeVisible()"  class="btn btn-primary"  >Display Details</button>
+<p *ngIf="password">Password=tuna</p>
+<p *ngFor="let item of log ; let i=index" 
+[ngStyle]="{backgroundColor: i >=5 ? 'blue' :'transparent'}" 
+[ngClass]="{'white-text': i >=5}" >{{ item }} </p>
+
+<hr><hr>
+
+</div></div>
