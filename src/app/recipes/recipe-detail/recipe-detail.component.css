@@ -1,0 +1,19 @@
+ul{
+    background-color: rgb(14, 71, 107);
+    color: bisque;
+    text-decoration: none;
+}
+ul a:hover{
+    color: rgb(129, 125, 125);
+}
+ul li{
+  padding: 4px;
+}
+li a{
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+.description{
+    font-style: italic;
+}

@@ -1,0 +1,14 @@
+label{
+    font-size: 17px;
+    font-weight:500 ;
+}
+.center{
+    display:block;
+    width:70%;
+    margin:0 auto;
+    padding-top: 50px;
+}
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched{
+    border: 1px solid red;
+}

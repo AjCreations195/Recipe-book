@@ -1,0 +1,10 @@
+.row{
+    margin-top: 5px;
+}
+label{
+    font-weight: bold;
+}
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched{
+    border: 1px solid red;
+}

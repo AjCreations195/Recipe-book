@@ -1,0 +1,43 @@
+<a
+ [routerLink]="[index]"
+  style="cursor: pointer;"
+  routerLinkActive="active"
+ class="list-group-item clearfix "><div class="card">
+  <div class="bg-image imageContent hover-overlay ripple" data-mdb-ripple-color="light">
+    <img
+    [src]="recipe.imagePath"
+      class="img-fluid img-responsive"alt="{{recipe.name}}"/>
+    <a href="#!">
+      <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+    </a>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title nameRecipe ">{{recipe.name}}</h5>
+    <p class="card-text">
+      {{recipe.description |slice:0:43}}...</p>
+    <!-- <a  class="btn btn-primary"></a> -->
+    <mat-icon class="material-icon" aria-hidden="false" aria-label="Example home icon">favorite</mat-icon>
+
+  </div>
+</div></a>
+
+      
+
+<!-- 
+        <a
+ [routerLink]="[index]"
+  style="cursor: pointer;"
+  routerLinkActive="active"
+ class="list-group-item clearfix ">
+            <div class="d-flex justify-content-between ">
+                  <div class="">
+                <h4 class="list-group-item-heading">{{recipe.name}}</h4>
+                <p class="list-group-item-text">{{recipe.description | slice:0:20}}</p> 
+              </div>
+              <span class="pull-right mt-2">
+              <img [src]="recipe.imagePath"
+                class="img-responsive " style="max-height: 50px;"
+                 alt="{{recipe.name}}">
+              </span>
+            </div> 
+        </a> -->

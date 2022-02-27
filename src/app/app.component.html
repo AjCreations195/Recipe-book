@@ -1,5 +1,8 @@
-<input type="text" [(ngModel)]="name" name="" id="">
-<p>{{name}}</p>
-
-<hr>
-<app-server></app-server>
+<app-header></app-header> 
+<div class="container" >
+    <div class="row ">
+        <div class="col-md-12 padding">
+           <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

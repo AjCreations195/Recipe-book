@@ -1,0 +1,31 @@
+.imageContent img{
+    width: 100%;height: 12rem;
+    object-fit:cover;
+}
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #212529;
+    text-decoration: none;
+    border: none;
+   
+}
+.list-group-item.active {
+        /* z-index: 2; */
+        color: rgb(0, 0, 0);
+        background-color: #000000;
+        border-color: #000000;
+}
+.card-title{
+    font-size: large;
+    font-weight: 700;
+}
+.card-text{
+    color: rgb(47, 47, 49);
+    font-style: italic;
+    font-size: 17px;
+}
+.material-icon{
+    color: rgb(155, 13, 13);
+}

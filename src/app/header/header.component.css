@@ -1,0 +1,25 @@
+.active{
+    background-color: rgb(87, 93, 93);
+}
+.dropButton{
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+}
+/* .container{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+} */
+
+.spacer{
+  flex:1 1 auto;
+}
+.display{
+    z-index: 1;
+    flex-direction: row; 
+    box-sizing: border-box; 
+    display: flex;
+    position: fixed;
+}
+

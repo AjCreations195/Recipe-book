@@ -1,22 +1,45 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { StoreModule } from '@ngrx/store';
+import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StoreDevtoolsModule} from '@ngrx/store-devtools'
+import { EffectsModule } from '@ngrx/effects';
+import { StoreRouterConnectingModule} from '@ngrx/router-store'
 
 import { AppComponent } from './app.component';
-import { ServerComponent } from './server/server.component';
-import { ServersComponent } from './servers/servers.component';
-
+import { HeaderComponent } from './header/header.component';
+import { SharedModule } from './shared/shared.module';
+import { CoreModule } from './core.module';
+import * as  fromApp from './store/app.reducer';
+import { AuthEffects } from './auth/store/auth.effects';
+import { environment } from '../environments/environment';
+import { RecipeEffects } from './recipes/store/recipe.effects';
+import { ServiceWorkerModule } from '@angular/service-worker';
 @NgModule({
   declarations: [
     AppComponent,
-    ServerComponent,
-    ServersComponent
+    HeaderComponent,
   ],
   imports: [
-    BrowserModule,
-    FormsModule
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    SharedModule,
+    HttpClientModule,
+    StoreModule.forRoot(fromApp.appReducer),
+    EffectsModule.forRoot([AuthEffects,RecipeEffects]),
+    StoreDevtoolsModule.instrument({logOnly:environment.production}),
+    StoreRouterConnectingModule.forRoot(),
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    CoreModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
